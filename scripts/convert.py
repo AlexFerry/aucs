@@ -45,8 +45,11 @@ def parse_hpp(text):
             name = match.group(1)
             value = match.group(2)
 
-            clean_stack = [ns for ns in namespace_stack if ns != "cs2_dumper", "offsets"]
-
+            # remove namespace raiz
+            clean_stack = [
+                ns for ns in namespace_stack
+                if ns not in ("cs2_dumper", "offsets")
+            ]
             key = "_".join(clean_stack)
 
             if key not in result:
