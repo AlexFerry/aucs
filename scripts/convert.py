@@ -9,20 +9,16 @@ URLS = {
     "offsets": "https://raw.githubusercontent.com/a2x/cs2-dumper/main/output/offsets.hpp"
 }
 
-
 def download(url):
     r = requests.get(url)
     r.raise_for_status()
     return r.text
 
-
-# regex que funciona para qualquer tipo
 OFFSET_REGEX = re.compile(
     r"constexpr\s+[a-zA-Z0-9_:<>]+\s+([a-zA-Z0-9_]+)\s*=\s*(0x[0-9A-Fa-f]+)"
 )
 
 NAMESPACE_REGEX = re.compile(r"namespace\s+([a-zA-Z0-9_]+)")
-
 
 def parse_hpp(text):
 
@@ -49,7 +45,6 @@ def parse_hpp(text):
             name = match.group(1)
             value = match.group(2)
 
-            # remove namespace raiz
             clean_stack = [ns for ns in namespace_stack if ns != "cs2_dumper"]
 
             key = "_".join(clean_stack)
@@ -77,17 +72,17 @@ def main():
         final.update(parsed)
 
     # adicionar offset manual
-if "client_dll_C_CSPlayerPawn" not in final:
-    final["client_dll_C_CSPlayerPawn"] = {}
+    if "client_dll_C_CSPlayerPawn" not in final:
+        final["client_dll_C_CSPlayerPawn"] = {}
 
-final["client_dll_C_CSPlayerPawn"]["m_aimPunchCache"] = "0x16F0"
-    
-os.makedirs("output", exist_ok=True)
+    final["client_dll_C_CSPlayerPawn"]["m_aimPunchCache"] = "0x16F0"
 
-with open("output/offsets.json", "w") as f:
+    os.makedirs("output", exist_ok=True)
+
+    with open("output/offsets.json", "w") as f:
         json.dump(final, f, indent=4)
 
-print("Offsets JSON updated.")
+    print("Offsets JSON updated.")
 
 
 if __name__ == "__main__":
