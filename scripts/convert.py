@@ -74,11 +74,10 @@ def main():
 
         final.update(parsed)
 
-    # adicionar offset manual
-    if "client_dll_C_CSPlayerPawn" not in final:
-        final["client_dll_C_CSPlayerPawn"] = {}
+    if "C_CSPlayerPawn" not in final:
+        final["C_CSPlayerPawn"] = {}
 
-    final["client_dll_C_CSPlayerPawn"]["m_aimPunchCache"] = "0x16F0"
+    final["C_CSPlayerPawn"]["m_aimPunchCache"] = "0x16F0"
 
     os.makedirs("output", exist_ok=True)
 
