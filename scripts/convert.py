@@ -45,7 +45,7 @@ def parse_hpp(text):
             name = match.group(1)
             value = match.group(2)
 
-            clean_stack = [ns for ns in namespace_stack if ns != "cs2_dumper"]
+            clean_stack = [ns for ns in namespace_stack if ns != "cs2_dumper", "offsets"]
 
             key = "_".join(clean_stack)
 
