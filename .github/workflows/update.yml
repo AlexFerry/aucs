@@ -1,5 +1,8 @@
 name: Update CS2 Offsets
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: "*/30 * * * *"
