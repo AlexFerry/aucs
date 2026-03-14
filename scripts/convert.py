@@ -82,12 +82,12 @@ if "client_dll_C_CSPlayerPawn" not in final:
 
 final["client_dll_C_CSPlayerPawn"]["m_aimPunchCache"] = "0x16F0"
     
-    os.makedirs("output", exist_ok=True)
+os.makedirs("output", exist_ok=True)
 
-    with open("output/offsets.json", "w") as f:
+with open("output/offsets.json", "w") as f:
         json.dump(final, f, indent=4)
 
-    print("Offsets JSON updated.")
+print("Offsets JSON updated.")
 
 
 if __name__ == "__main__":
