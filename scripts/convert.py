@@ -1,13 +1,14 @@
 import requests
 import re
 import json
-from collections import defaultdict
+import os
 
 URLS = {
-    "buttons": "https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/buttons.hpp",
-    "client": "https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/client_dll.hpp",
-    "offsets": "https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/offsets.hpp"
+    "buttons": "https://raw.githubusercontent.com/a2x/cs2-dumper/main/output/buttons.hpp",
+    "client": "https://raw.githubusercontent.com/a2x/cs2-dumper/main/output/client_dll.hpp",
+    "offsets": "https://raw.githubusercontent.com/a2x/cs2-dumper/main/output/offsets.hpp"
 }
+
 
 def download(url):
     r = requests.get(url)
@@ -15,60 +16,72 @@ def download(url):
     return r.text
 
 
-def parse_buttons(text):
+# regex que funciona para qualquer tipo
+OFFSET_REGEX = re.compile(
+    r"constexpr\s+[a-zA-Z0-9_:<>]+\s+([a-zA-Z0-9_]+)\s*=\s*(0x[0-9A-Fa-f]+)"
+)
+
+NAMESPACE_REGEX = re.compile(r"namespace\s+([a-zA-Z0-9_]+)")
+
+
+def parse_hpp(text):
+
     result = {}
-    
-    pattern = re.compile(r"constexpr\s+auto\s+(\w+)\s*=\s*(0x[0-9A-Fa-f]+)")
-    
-    for name, value in pattern.findall(text):
-        result[name] = value
-        
-    return result
-
-
-def parse_structs(text):
-    data = defaultdict(dict)
-
-    struct = None
-
-    struct_pattern = re.compile(r"struct\s+(\w+)")
-    field_pattern = re.compile(r"constexpr\s+auto\s+(\w+)\s*=\s*(0x[0-9A-Fa-f]+)")
+    namespace_stack = []
 
     for line in text.splitlines():
 
-        s = struct_pattern.search(line)
-        if s:
-            struct = s.group(1)
+        line = line.strip()
+
+        # detect namespace
+        ns = NAMESPACE_REGEX.search(line)
+        if ns:
+            namespace_stack.append(ns.group(1))
             continue
 
-        f = field_pattern.search(line)
-        if f and struct:
-            name, value = f.groups()
-            data[struct][name] = value
+        # detect namespace end
+        if line.startswith("}"):
+            if namespace_stack:
+                namespace_stack.pop()
+            continue
 
-    return data
+        # detect offset
+        match = OFFSET_REGEX.search(line)
+        if match:
+
+            name = match.group(1)
+            value = match.group(2)
+
+            key = "_".join(namespace_stack)
+
+            if key not in result:
+                result[key] = {}
+
+            result[key][name] = value
+
+    return result
 
 
 def main():
 
-    buttons_text = download(URLS["buttons"])
-    client_text = download(URLS["client"])
-    offsets_text = download(URLS["offsets"])
+    final = {}
 
-    output = {}
+    for name, url in URLS.items():
 
-    output["buttons"] = parse_buttons(buttons_text)
+        print("Downloading:", name)
 
-    structs_client = parse_structs(client_text)
-    structs_offsets = parse_structs(offsets_text)
+        text = download(url)
 
-    output.update(structs_client)
-    output.update(structs_offsets)
+        parsed = parse_hpp(text)
+
+        final.update(parsed)
+
+    os.makedirs("output", exist_ok=True)
 
     with open("output/offsets.json", "w") as f:
-        json.dump(output, f, indent=4)
+        json.dump(final, f, indent=4)
 
-    print("JSON atualizado!")
+    print("Offsets JSON updated.")
 
 
 if __name__ == "__main__":
