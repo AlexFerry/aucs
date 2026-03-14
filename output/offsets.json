@@ -3869,7 +3869,7 @@
         "m_FinalKVs": "0x58",
         "m_vecGeneratedTextures": "0x80"
     },
-    "offsets_client_dll": {
+    "client_dll": {
         "dwCSGOInput": "0x2318FC0",
         "dwEntityList": "0x24AE268",
         "dwGameEntitySystem": "0x24AE268",
@@ -3888,7 +3888,7 @@
         "dwViewRender": "0x230F338",
         "dwWeaponC4": "0x2298380"
     },
-    "offsets_engine2_dll": {
+    "engine2_dll": {
         "dwBuildNumber": "0x60D514",
         "dwNetworkGameClient": "0x908520",
         "dwNetworkGameClient_clientTickCount": "0x378",
@@ -3901,13 +3901,13 @@
         "dwWindowHeight": "0x90C8DC",
         "dwWindowWidth": "0x90C8D8"
     },
-    "offsets_inputsystem_dll": {
+    "inputsystem_dll": {
         "dwInputSystem": "0x45AD0"
     },
-    "offsets_matchmaking_dll": {
+    "matchmaking_dll": {
         "dwGameTypes": "0x1B8000"
     },
-    "offsets_soundsystem_dll": {
+    "soundsystem_dll": {
         "dwSoundSystem": "0x4F3470",
         "dwSoundSystem_engineViewData": "0x7C"
     },
