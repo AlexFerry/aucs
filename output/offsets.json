@@ -1144,7 +1144,8 @@
         "m_delayTargetIDTimer": "0x3EB0",
         "m_iTargetItemEntIdx": "0x3EC8",
         "m_iOldIDEntIndex": "0x3ECC",
-        "m_holdTargetIDTimer": "0x3ED0"
+        "m_holdTargetIDTimer": "0x3ED0",
+        "m_aimPunchCache": "0x16F0"
     },
     "CPulseCell_WaitForCursorsWithTagBase": {
         "m_nCursorsAllowedToWait": "0x48",
@@ -3910,8 +3911,5 @@
     "soundsystem_dll": {
         "dwSoundSystem": "0x4F3470",
         "dwSoundSystem_engineViewData": "0x7C"
-    },
-    "client_dll_C_CSPlayerPawn": {
-        "m_aimPunchCache": "0x16F0"
     }
 }
