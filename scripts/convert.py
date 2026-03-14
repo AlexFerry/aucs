@@ -33,26 +33,26 @@ def parse_hpp(text):
 
         line = line.strip()
 
-        # detect namespace
         ns = NAMESPACE_REGEX.search(line)
         if ns:
             namespace_stack.append(ns.group(1))
             continue
 
-        # detect namespace end
         if line.startswith("}"):
             if namespace_stack:
                 namespace_stack.pop()
             continue
 
-        # detect offset
         match = OFFSET_REGEX.search(line)
         if match:
 
             name = match.group(1)
             value = match.group(2)
 
-            key = "_".join(namespace_stack)
+            # remove namespace raiz
+            clean_stack = [ns for ns in namespace_stack if ns != "cs2_dumper"]
+
+            key = "_".join(clean_stack)
 
             if key not in result:
                 result[key] = {}
@@ -76,6 +76,12 @@ def main():
 
         final.update(parsed)
 
+    # adicionar offset manual
+if "client_dll_C_CSPlayerPawn" not in final:
+    final["client_dll_C_CSPlayerPawn"] = {}
+
+final["client_dll_C_CSPlayerPawn"]["m_aimPunchCache"] = "0x16F0"
+    
     os.makedirs("output", exist_ok=True)
 
     with open("output/offsets.json", "w") as f:
