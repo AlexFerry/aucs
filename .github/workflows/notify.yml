@@ -1,0 +1,52 @@
+name: Notify Discord on Update
+
+on:
+  push:
+    paths:
+      - 'output/offsets.json'
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate message and send to Discord
+        run: |
+          export LANG=C.UTF-8
+
+          sudo apt-get update -y
+          sudo apt-get install -y jq
+
+          export TZ='America/Sao_Paulo'
+          DATE=$(date +'%d/%m')
+
+          MESSAGES=(
+            "[+] Otimização geral de desempenho interno."
+            "[+] Refatoração de módulos críticos do sistema."
+            "[+] Melhorias na estabilidade em execução prolongada."
+            "[+] Ajustes no gerenciamento de memória."
+            "[+] Aprimoramento dos métodos de segurança."
+            "[+] Redução de inconsistências em cenários específicos."
+            "[+] Melhorias internas no sistema de detecção."
+            "[+] Melhorias estruturais no código base."
+          )
+
+          RANDOM_MSGS=$(printf "%s\n" "${MESSAGES[@]}" | shuf | head -n 3)
+
+          CONTENT=$(cat <<EOF
+          \`\`\`
+          👑 VIPER CS2 [UPDATED ${DATE}]
+          
+          [+] Compatibilidade com a nova versão do jogo.
+          ${RANDOM_MSGS}
+          \`\`\`
+          EOF
+          )
+
+          JSON=$(jq -n --arg content "$CONTENT" '{content: $content}')
+
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "$JSON" \
+               ${{ secrets.DISCORD_WEBHOOK }}
