@@ -3941,7 +3941,7 @@
         "dwGameRules": "0x2328F38",
         "dwGlobalVars": "0x20496A0",
         "dwGlowManager": "0x2325D30",
-        "dwLocalPlayerController": "0x2308540",
+        "dwLocalPlayerController": "0x2308520",
         "dwLocalPlayerPawn": "0x20547A0",
         "dwPlantedC4": "0x2336A48",
         "dwPrediction": "0x20546B0",
@@ -3950,7 +3950,7 @@
         "dwViewAngles": "0x233E408",
         "dwViewMatrix": "0x232EAC0",
         "dwViewRender": "0x232DCB8",
-        "dwWeaponC4": "0x22A6CE8"
+        "dwWeaponC4": "0x22A6CB8"
     },
     "engine2_dll": {
         "dwBuildNumber": "0x60CC74",
