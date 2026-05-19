@@ -74,11 +74,6 @@ def main():
 
         final.update(parsed)
 
-    if "C_CSPlayerPawn" not in final:
-        final["C_CSPlayerPawn"] = {}
-
-    final["C_CSPlayerPawn"]["m_aimPunchCache"] = "0x16F0"
-
     os.makedirs("output", exist_ok=True)
 
     with open("output/offsets.json", "w") as f:
