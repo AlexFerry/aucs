@@ -1,21 +1,21 @@
 {
     "buttons": {
-        "attack": "0x2053990",
-        "attack2": "0x2053A20",
-        "back": "0x2053C60",
-        "duck": "0x2053F30",
-        "forward": "0x2053BD0",
-        "jump": "0x2053EA0",
-        "left": "0x2053CF0",
-        "lookatweapon": "0x2343D90",
-        "reload": "0x2053900",
-        "right": "0x2053D80",
-        "showscores": "0x2343C70",
-        "sprint": "0x2053870",
-        "turnleft": "0x2053AB0",
-        "turnright": "0x2053B40",
-        "use": "0x2053E10",
-        "zoom": "0x2343D00"
+        "attack": "0x2089B10",
+        "attack2": "0x2089BA0",
+        "back": "0x2089DE0",
+        "duck": "0x208A0B0",
+        "forward": "0x2089D50",
+        "jump": "0x208A020",
+        "left": "0x2089E70",
+        "lookatweapon": "0x237B4D0",
+        "reload": "0x2089A80",
+        "right": "0x2089F00",
+        "showscores": "0x237B3B0",
+        "sprint": "0x20899F0",
+        "turnleft": "0x2089C30",
+        "turnright": "0x2089CC0",
+        "use": "0x2089F90",
+        "zoom": "0x237B440"
     },
     "CPulseCell_WaitForCursorsWithTag": {
         "m_bTagSelfWhenComplete": "0x98",
@@ -1117,24 +1117,21 @@
         "m_angStashedShootAngles": "0x1CD8",
         "m_vecStashedGrenadeThrowPosition": "0x1CE4",
         "m_vecStashedVelocity": "0x1CF0",
-        "m_angShootAngleHistory": "0x1CFC",
-        "m_vecThrowPositionHistory": "0x1D14",
-        "m_vecVelocityHistory": "0x1D2C",
-        "m_bShouldAutobuyDMWeapons": "0x3280",
-        "m_fImmuneToGunGameDamageTime": "0x3284",
-        "m_bGunGameImmunity": "0x3288",
-        "m_fImmuneToGunGameDamageTimeLast": "0x328C",
-        "m_fMolotovDamageTime": "0x3290",
-        "m_nPlayerInfernoBodyFx": "0x32FC",
-        "m_angEyeAngles": "0x3370",
-        "m_arrOldEyeAnglesTimes": "0x3400",
-        "m_arrOldEyeAngles": "0x3410",
-        "m_angEyeAnglesVelocity": "0x3440",
-        "m_iIDEntIndex": "0x344C",
-        "m_delayTargetIDTimer": "0x3450",
-        "m_iTargetItemEntIdx": "0x3468",
-        "m_iOldIDEntIndex": "0x346C",
-        "m_holdTargetIDTimer": "0x3470",
+        "m_bShouldAutobuyDMWeapons": "0x3230",
+        "m_fImmuneToGunGameDamageTime": "0x3234",
+        "m_bGunGameImmunity": "0x3238",
+        "m_fImmuneToGunGameDamageTimeLast": "0x323C",
+        "m_fMolotovDamageTime": "0x3240",
+        "m_nPlayerInfernoBodyFx": "0x32AC",
+        "m_angEyeAngles": "0x3320",
+        "m_arrOldEyeAnglesTimes": "0x33B0",
+        "m_arrOldEyeAngles": "0x33C0",
+        "m_angEyeAnglesVelocity": "0x33F0",
+        "m_iIDEntIndex": "0x33FC",
+        "m_delayTargetIDTimer": "0x3400",
+        "m_iTargetItemEntIdx": "0x3418",
+        "m_iOldIDEntIndex": "0x341C",
+        "m_holdTargetIDTimer": "0x3420",
         "m_aimPunchCache": "0x16F0"
     },
     "CPulseCell_WaitForCursorsWithTagBase": {
@@ -1649,6 +1646,9 @@
     },
     "C_StattrakModule": {
         "m_bKnife": "0x1160"
+    },
+    "CCSObserver_CameraServices": {
+        "m_hPrevPostProcessingVolume": "0x2A8"
     },
     "CEnvSoundscapeProxy": {
         "m_MainSoundscapeName": "0x690"
@@ -3035,8 +3035,8 @@
         "m_bHasParent": "0x1210"
     },
     "C_CSGO_PreviewPlayer": {
-        "m_animgraphCharacterModeString": "0x3490",
-        "m_flInitialModelScale": "0x3498"
+        "m_animgraphCharacterModeString": "0x3440",
+        "m_flInitialModelScale": "0x3448"
     },
     "C_RectLight": {
         "m_bShowLight": "0x12B8"
@@ -3934,23 +3934,23 @@
         "m_vecGeneratedTextures": "0x80"
     },
     "client_dll": {
-        "dwCSGOInput": "0x2343E70",
-        "dwEntityList": "0x24D4E80",
-        "dwGameEntitySystem": "0x24D4E80",
+        "dwCSGOInput": "0x237B5B0",
+        "dwEntityList": "0x250C5B0",
+        "dwGameEntitySystem": "0x250C5B0",
         "dwGameEntitySystem_highestEntityIndex": "0x2090",
-        "dwGameRules": "0x232EFF8",
-        "dwGlobalVars": "0x204F600",
-        "dwGlowManager": "0x232BDF0",
-        "dwLocalPlayerController": "0x230E5C0",
-        "dwLocalPlayerPawn": "0x205A700",
-        "dwPlantedC4": "0x233D168",
-        "dwPrediction": "0x205A610",
-        "dwSensitivity": "0x232C908",
+        "dwGameRules": "0x2366788",
+        "dwGlobalVars": "0x2085788",
+        "dwGlowManager": "0x2363580",
+        "dwLocalPlayerController": "0x2345D50",
+        "dwLocalPlayerPawn": "0x2090880",
+        "dwPlantedC4": "0x2374278",
+        "dwPrediction": "0x2090790",
+        "dwSensitivity": "0x2364098",
         "dwSensitivity_sensitivity": "0x58",
-        "dwViewAngles": "0x23444F8",
-        "dwViewMatrix": "0x2334850",
-        "dwViewRender": "0x23348D8",
-        "dwWeaponC4": "0x22ACD38"
+        "dwViewAngles": "0x237BC38",
+        "dwViewMatrix": "0x236C2F0",
+        "dwViewRender": "0x236B4F8",
+        "dwWeaponC4": "0x22E4518"
     },
     "engine2_dll": {
         "dwBuildNumber": "0x60CC74",
@@ -3969,7 +3969,7 @@
         "dwInputSystem": "0x42B50"
     },
     "matchmaking_dll": {
-        "dwGameTypes": "0x1B0F80"
+        "dwGameTypes": "0x1DF0B0"
     },
     "soundsystem_dll": {
         "dwSoundSystem": "0x512360",
