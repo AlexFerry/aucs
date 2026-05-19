@@ -1131,8 +1131,7 @@
         "m_delayTargetIDTimer": "0x3400",
         "m_iTargetItemEntIdx": "0x3418",
         "m_iOldIDEntIndex": "0x341C",
-        "m_holdTargetIDTimer": "0x3420",
-        "m_aimPunchCache": "0x16F0"
+        "m_holdTargetIDTimer": "0x3420"
     },
     "CPulseCell_WaitForCursorsWithTagBase": {
         "m_nCursorsAllowedToWait": "0x48",
