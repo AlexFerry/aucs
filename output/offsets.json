@@ -1,21 +1,21 @@
 {
     "buttons": {
-        "attack": "0x20B48F0",
-        "attack2": "0x20B4980",
-        "back": "0x20B4BC0",
-        "duck": "0x20B4E90",
-        "forward": "0x20B4B30",
-        "jump": "0x20B4E00",
-        "left": "0x20B4C50",
-        "lookatweapon": "0x23DCBA0",
-        "reload": "0x20B4860",
-        "right": "0x20B4CE0",
-        "showscores": "0x23DCA80",
-        "sprint": "0x20B47D0",
-        "turnleft": "0x20B4A10",
-        "turnright": "0x20B4AA0",
-        "use": "0x20B4D70",
-        "zoom": "0x23DCB10"
+        "attack": "0x20B38F0",
+        "attack2": "0x20B3980",
+        "back": "0x20B3BC0",
+        "duck": "0x20B3E90",
+        "forward": "0x20B3B30",
+        "jump": "0x20B3E00",
+        "left": "0x20B3C50",
+        "lookatweapon": "0x23DBBA0",
+        "reload": "0x20B3860",
+        "right": "0x20B3CE0",
+        "showscores": "0x23DBA80",
+        "sprint": "0x20B37D0",
+        "turnleft": "0x20B3A10",
+        "turnright": "0x20B3AA0",
+        "use": "0x20B3D70",
+        "zoom": "0x23DBB10"
     },
     "CPulseCell_WaitForCursorsWithTag": {
         "m_bTagSelfWhenComplete": "0x128",
@@ -1429,9 +1429,9 @@
         "m_strLayout": "0x608",
         "m_vecPlayerLayoutStates": "0x610",
         "m_globalLayoutState": "0x678",
-        "m_vecPanelIds": "0x788",
-        "m_vecClassNames": "0x7A0",
-        "m_vecDialogVariableNames": "0x7B8"
+        "m_vecPanelIds": "0x780",
+        "m_vecClassNames": "0x798",
+        "m_vecDialogVariableNames": "0x7B0"
     },
     "CEntityInstance": {
         "m_iszPrivateVScripts": "0x8",
@@ -3211,10 +3211,10 @@
         "m_flC4ExplodeSpectateDuration": "0x1708"
     },
     "CCSCustomHudLayoutState": {
-        "m_bInputCaptureEnabled": "0x30",
+        "m_playerSlot": "0x30",
+        "m_bInputCaptureEnabled": "0x34",
         "m_vecHasClasses": "0x38",
-        "m_vecDialogVariableStrings": "0x50",
-        "m_playerSlot": "0x108"
+        "m_vecDialogVariableStrings": "0x50"
     },
     "CFilterName": {
         "m_iFilterName": "0x638"
@@ -3929,23 +3929,23 @@
         "m_vecGeneratedTextures": "0x80"
     },
     "client_dll": {
-        "dwCSGOInput": "0x23DCC80",
-        "dwEntityList": "0x2572230",
-        "dwGameEntitySystem": "0x2572230",
+        "dwCSGOInput": "0x23DBC80",
+        "dwEntityList": "0x2571230",
+        "dwGameEntitySystem": "0x2571230",
         "dwGameEntitySystem_highestEntityIndex": "0x2090",
-        "dwGameRules": "0x23C6D28",
-        "dwGlobalVars": "0x20B05F0",
-        "dwGlowManager": "0x23C3A58",
-        "dwLocalPlayerController": "0x23A1F30",
-        "dwLocalPlayerPawn": "0x23C7268",
-        "dwPlantedC4": "0x2391A18",
-        "dwPrediction": "0x23C7170",
-        "dwSensitivity": "0x23C4578",
+        "dwGameRules": "0x23C5D28",
+        "dwGlobalVars": "0x20AF5F0",
+        "dwGlowManager": "0x23C2A58",
+        "dwLocalPlayerController": "0x23A0F30",
+        "dwLocalPlayerPawn": "0x23C6268",
+        "dwPlantedC4": "0x2390A18",
+        "dwPrediction": "0x23C6170",
+        "dwSensitivity": "0x23C3578",
         "dwSensitivity_sensitivity": "0x58",
-        "dwViewAngles": "0x23DD308",
-        "dwViewMatrix": "0x23CC830",
-        "dwViewRender": "0x23CC898",
-        "dwWeaponC4": "0x233FF10"
+        "dwViewAngles": "0x23DC308",
+        "dwViewMatrix": "0x23CB830",
+        "dwViewRender": "0x23CB898",
+        "dwWeaponC4": "0x233EF10"
     },
     "engine2_dll": {
         "dwBuildNumber": "0x60F594",
